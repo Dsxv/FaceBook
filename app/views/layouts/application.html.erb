@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Facebook</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <% if user_signed_in? %>
+
+      <a class="nav-link" href="#"><%=current_user.name%></a>
+      <a href="#" class="nav-link">
+        <%=image_tag(current_user.profile_pic, style:"height:50px ; width:50px ; border-radius:50%")%>
+      </a>
+
+    <%end%>
+
+
+
+    <%= yield %>
+
+  </body>
+</html>

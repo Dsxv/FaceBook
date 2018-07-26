@@ -1,8 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1>Mini Facebook Project! </h1>
 
+To Do: //will do it later :) 
 Things you may want to cover:
 
 * Ruby version

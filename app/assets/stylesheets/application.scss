@@ -25,7 +25,8 @@
 #navbar{
   position: fixed;
 background-color: rgb(66, 104, 170) ;
-height:45px;
+height:43px;
+
 
 width:100%;
 display:flex ;
@@ -41,6 +42,7 @@ align-items:center;
   position:relative;
   left:5.5vw;
   height:25px;
+  width:50vw;
   input{
     position:relative;
     top: -1px;
@@ -58,15 +60,67 @@ align-items:center;
     border: 0;
     height: 25px;
     left: -6px;
-
     width: 3.5vw;
     border-radius:0 2px 2px 0;
     cursor:pointer;
+    transition: ease-in-out 100ms;
+  }
+  button:hover {
+    background-color:rgb(233, 233, 233) ;
+  }
 
+ }
+
+.user-profile{
+ display: flex;
+ transition: ease-in-out 100ms ;
+ border-radius:4px;
+ padding-left:2px;
+  cursor:pointer ;
+ .profile-pic{
+  position:relative;
+  border-radius: 50%;
+  top:3px;
+
+ }
+ .profile-name{
+   padding-left:.5vw !important ;
+
+position: relative;
+
+ }
+}
+.nav-box{
+  border-right:1px solid rgb(56, 90, 148) ;
+  color:white;
+  font-size:.85em ;
+  font-family: Arial;
+  padding:0.5vw 1.5vw .5vw 1.5vw;
+  font-weight: bolder;
+  transition: ease-in-out 100ms;
+  border-radius:4px;
+  cursor:pointer;
+  display: inline-flex;
+
+}
+.user-profile:hover{
+  background-color:rgb(56, 90, 148) ;
+}
+.nav-box:hover{
+  background-color:rgb(56, 90, 148) ;
+}
+#dropdown-btn{
+    display: inline-flex;
+  position: relative;
+
+  #dropdownMenuButton{
+   background-color: rgb(66, 104, 170) ;
+   padding:0 px;
+  }
+  .dropdown-menu{
+    left:-100% !important;
+    padding-left: 40%;
   }
 
 }
-
-
-
 }

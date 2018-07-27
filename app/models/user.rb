@@ -9,5 +9,11 @@ class User < ApplicationRecord
          has_many :comments
 
          has_one_attached :profile_pic
-        
+
+         def self.give_user(user)
+             user_name = user.name.split(' ')
+              return user_name[0]
+           end
+
+
 end

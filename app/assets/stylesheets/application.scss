@@ -10,7 +10,63 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-   @import require_tree ;
-  @import  require_self ;
+ @import require_tree ;
+ @import  require_self ;
+
+
+
  */
-@import "bootstrap";
+ @import "bootstrap";
+   @import 'font-awesome' ;
+*{
+  padding:0;
+  margin:0;
+}
+#navbar{
+  position: fixed;
+background-color: rgb(66, 104, 170) ;
+height:45px;
+
+width:100%;
+display:flex ;
+justify-content: flex-start;
+align-items:center;
+.logo{position: relative;
+  border-radius:2px;
+  height:25px;width:25px;
+  left:5vw;
+  cursor:pointer;
+}
+.search{
+  position:relative;
+  left:5.5vw;
+  height:25px;
+  input{
+    position:relative;
+    top: -1px;
+    width:30vw;
+    border:0;
+    padding:3px 2px 2px 5px;
+    font-size:0.85em;
+    font-family:Arial;
+    border-radius:2px 0 0 2px;
+  }
+  button{
+    background-color: #fafafa;
+    color: #969696;
+    position: relative;
+    border: 0;
+    height: 25px;
+    left: -6px;
+
+    width: 3.5vw;
+    border-radius:0 2px 2px 0;
+    cursor:pointer;
+
+  }
+
+}
+
+
+
+}

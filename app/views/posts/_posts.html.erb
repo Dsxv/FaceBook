@@ -1,14 +1,14 @@
 <% @posts.each do |post| %>
   <div class="post">
     <div class="post-user">
-   
+
     </div>
     <div class="body">
       <%if post.image.attached? %>
-      <div class="content"></div>
-      <div class="img"></div>
+      <div class="content"><%=post.content%></div>
+      <div class="img"><%=post.image%></div>
       <%else%>
-      <div class="content-bigger"></div>
+      <div class="content-bigger"><%=post.content%></div>
 
       <%end%>
 
@@ -17,7 +17,9 @@
       <!-- Like status -->
     </div>
     <div class="post-comment">
-       <div class="new-comment"><!--New Comment --></div>
+       <div class="new-comment">
+         
+         </div>
        <div class="all-comment">
          <% post.comments.each do |comment| %>
          <div class="comment">

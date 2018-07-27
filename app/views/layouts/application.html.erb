@@ -12,11 +12,15 @@
   <body>
 
   <% if user_signed_in? %>
+    <navbar id="navbar">
+    <img src="assets/fb.jpg" alt="fb-logo" class="logo">
+    <div class="search">
+      <input type="search" class="search-bar" placeholder="Search">
+      <button type="submit"><i class="fa fa-search" ></i></button>
 
-      <a class="nav-link" href="#"><%=current_user.name%></a>
-      <a href="#" class="nav-link">
-        <%=image_tag(current_user.profile_pic, style:"height:50px ; width:50px ; border-radius:50%")%>
-      </a>
+    </div>
+    </navbar>
+
 
     <%end%>
 

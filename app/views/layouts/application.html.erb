@@ -11,44 +11,45 @@
 
   <body >
 
-  <% if user_signed_in? %>
-    <navbar id="navbar">
-    <img src="assets/fb.jpg" alt="fb-logo" class="logo">
-    <div class="search">
-      <input type="search" class="search-bar" placeholder="Search">
-      <button type="submit"><i class="fa fa-search" ></i></button>
+    <% if user_signed_in? %>
+      <navbar id="navbar">
+      <img src="assets/fb.jpg" alt="fb-logo" class="logo">
+      <div class="search">
+        <input type="search" class="search-bar" placeholder="Search">
+        <button type="submit"><i class="fa fa-search" ></i></button>
 
+      </div>
+      <div class="user-profile">
+      <%= image_tag(current_user.profile_pic , style: "height:25px ; width:25px" , class: "profile-pic ") %>
+      <div class="profile-name nav-box">
+      <%= User.give_user(current_user) %></div>
+      </div>
+      <div class="other-nav">
+        <div class=" nav-box">Home</div>
+        <div class="nav-box">Create</div>
+        <div class="dropdown " id="dropdown-btn">
+
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+         </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%= link_to  "Sign Out" , destroy_user_session_path  , method: :delete , class: "dropdown-item"%>
     </div>
-    <div class="user-profile">
-    <%= image_tag(current_user.profile_pic , style: "height:25px ; width:25px" , class: "profile-pic ") %>
-    <div class="profile-name nav-box">
-    <%= User.give_user(current_user) %></div>
-    </div>
-    <div class="other-nav">
-      <div class=" nav-box">Home</div>
-      <div class="nav-box">Create</div>
-      <div class="dropdown " id="dropdown-btn">
-
-        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-       </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <%= link_to  "Sign Out" , destroy_user_session_path  , method: :delete , class: "dropdown-item"%>
   </div>
-</div>
 
-  </div>
-</div>
     </div>
+  </div>
+      </div>
 
-    </navbar>
-
-
-    <%end%>
-
+      </navbar>
 
 
-    <%= yield %>
+      <%end%>
+
+
+
+      <%= yield %>
+
 
   </body>
 </html>

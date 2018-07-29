@@ -15,5 +15,10 @@ class User < ApplicationRecord
               return user_name[0]
            end
 
+           before_create :img_def_setter
+             def img_def_setter
+               self.profile_pic.attach(io: File.open("app/assets/images/default.png"), filename: "defalt.png", content_type: "image/png")
+
+             end
 
 end

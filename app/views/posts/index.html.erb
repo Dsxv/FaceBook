@@ -1,42 +1,26 @@
 <div class="newsfeed">
+  <div class="newsfeed-left"></div>
+  <div class="newsfeed-right"></div>
   <div class="newsfeed-main">
-   <div class="new-post">
+    <div class="new-post">
+      <%=form_for(@post , html: {class: "form"} , url:posts_path) do |p| %>
+      <div class="selector">
+         <i class="fa fa-pencil" id="post_icon"><span>Make Post</span></i>
+        <%= p.file_field :image , id: "image_new" %>
+        <i class="fa fa-image" id="image_alt"><span>Photo</span></i>
+      </div>
+      <div class="person">
+         <div class="pic"><%= image_tag(current_user.profile_pic , style: "height:50px ; width:50px")%></div>
 
-
-     <%=form_for(@post , html: {class: "form"} , url:posts_path) do |p| %>
-
-      <%= p.text_field :content , placeholder:"Content"%>
-      <%= p.file_field :image , id: "image_new" %>
-      <img src="" alt="" id="preview">
-
-      <%= p.submit "New Post"%>
-     <%= render 'posts' %>
-
-      <%end%>
-     </div>
-
-
-
-
+        <%= p.text_field :content , placeholder:"Write Something Here..." , class: "content" , autocomplete: "off"%>
+      </div>
+         <img src="" alt="" id="preview">
+      <%= p.submit "New Post" , class: "content-submit "%>
+      <!-- render 'posts' in erb code -->
+    <%end%>
+    
   </div>
-  <script type="text/javascript">
-  $(document).ready(function(){
 
-   $("#image_new").change(function()
-   { if(this.files && this.files[0])
-    {  var reader = new FileReader() ;
-      reader.onload =  function(e) {
-        $('#preview').attr('src', e.target.result);
-      }
+</div>
 
-      reader.readAsDataURL(this.files[0]);
-
-    }
-
-     })
-
-  })
-
-
-  </script>
 </div>

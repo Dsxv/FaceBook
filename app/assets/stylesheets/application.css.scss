@@ -157,10 +157,17 @@ textarea:focus, input:focus{
     width: 40vw;
   }
 
+
   .new-post {
     padding:0 10 10 10px;
     background-color: white;
     border-radius: 3px;
+
+   .close{
+   
+   font-size: 2em;
+   display: none;
+   }
 
     .selector{
 
@@ -202,8 +209,11 @@ textarea:focus, input:focus{
 
       #preview {
         width: 35vw;
-        height: auto;
-        padding-left: 13%;
+  height: auto;
+  margin-left: 2.8vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
 
       }
      .content{
@@ -214,7 +224,17 @@ textarea:focus, input:focus{
       font-size: .95em ;
      }
      .content-submit{
-      display:none;
+      // display:none;
+      width: 98% ;
+    border: none;
+    margin: .5vw;
+    padding: 0.3vw;
+    color: white;
+    background-color: rgb(66,104,170);
+    border-radius: 4px;
+    font-family: Arial;
+    font-size: .95em;
+    font-weight: bolder;
      }
      .person{
        display:flex;

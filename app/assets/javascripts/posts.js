@@ -1,15 +1,25 @@
 
 $(document).ready(function(){
+  $('.content-submit').prop('disabled', true);
+     $cl=$('.close') ;
 
  $("#image_new").change(function()
- { if(this.files && this.files[0])
-  {  var reader = new FileReader() ;
+ {  console.log('c') ;
+   if(this.files && this.files[0])
+  {
+     $cl.css('display','block') ;
+     var reader = new FileReader() ;
     reader.onload =  function(e) {
       $('#preview').attr('src', e.target.result);
     }
 
     reader.readAsDataURL(this.files[0]) ;
+    $('.content-submit').prop('disabled', false);
+    $('.content-submit').css({'cursor':'pointer'}) ;
+
+
   }
+
 
 }) ;
 
@@ -21,11 +31,42 @@ $(document).ready(function(){
     $(".search button").css({ 'animation': 'colchange 300ms ease-in-out 1 forwards' });
   }) ;
   $(".search-bar , .search button").blur(function(){
+
     $(".search button").css({ 'animation': 'colchange 300ms ease-in-out 1 reverse' })
   })
 
+ // can also be used for comments
+    $('.content').keyup(function() {
+       var temp = $('.content').val().replace(/ /g,"") ;
+       if(temp != ''||$('#preview').attr('src')!='') {
+          $('.content-submit').prop('disabled', false);
+          $('.content-submit').css({'cursor':'pointer'}) ;
+       }
+       else
+       {$('.content-submit').prop('disabled', true);
+        $('.content-submit').css({'cursor':'default'});
+     }
+    });
 
-  $("#navbar").click(function(){
-    $(".modal-this").click() ;
-  }) ;
-  })
+  $cl.click(function(){
+     $('#image_new').wrap('<form>').closest('form').get(0).reset(); ;
+     $('#image_new').unwrap() ;
+
+     $('#preview').attr('src' , '' ) ;
+     $cl.css('display','none') ;
+     var temp = $('.content').val().replace(/ /g,"") ;
+     if(temp != ''||$('#preview').attr('src')!='') {
+        $('.content-submit').prop('disabled', false);
+        $('.content-submit').css({'cursor':'pointer'}) ;
+     }
+     else
+     {$('.content-submit').prop('disabled', true);
+      $('.content-submit').css({'cursor':'default'});
+   }
+
+
+      })
+
+
+
+})

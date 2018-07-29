@@ -15,10 +15,12 @@
         <%= p.text_field :content , placeholder:"Write Something Here..." , class: "content" , autocomplete: "off"%>
       </div>
          <img src="" alt="" id="preview">
-      <%= p.submit "New Post" , class: "content-submit "%>
+         <i class="fa fa-times close"></i>
+      <%= p.submit "New Post" , class: "btn content-submit "%>
       <!-- render 'posts' in erb code -->
+
     <%end%>
-    
+
   </div>
 
 </div>

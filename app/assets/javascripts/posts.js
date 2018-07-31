@@ -53,7 +53,8 @@ $(document).ready(function(){
      $('#image_new').unwrap() ;
 
      $('#preview').attr('src' , '' ) ;
-     $cl.css('display','none') ;
+
+     $cl.fadeOut();
      var temp = $('.content').val().replace(/ /g,"") ;
      if(temp != ''||$('#preview').attr('src')!='') {
         $('.content-submit').prop('disabled', false);
@@ -66,6 +67,29 @@ $(document).ready(function(){
 
 
       })
+
+//       $('#new_post').click(function(){
+// console.log('clicked') ;
+
+// $(this).css({'width':'40vw','position':'absolute','background-color':'white'});
+// console.log($(this).css('position'));
+// $('.mod_bg').fadeIn('slow') ;
+// })
+var modal=false;
+$('#new_post').click(function(){
+if(!modal){
+$('.close_modal').css('display','block') ;
+$(this).addClass('temp-modal');
+$(this).wrap('<div class="mod_bg"></div>');
+$('.mod_bg').fadeIn('slow') ;
+modal=true;}
+}) ;
+$('.close_modal').click(function(){
+$('#new_post').removeClass('temp-modal') ;
+$('mod_bg').fadeOut('slow'); $('.close_modal').css('display','none')
+$('#new_post').unwrap() ; modal=false;})
+
+
 
 
 

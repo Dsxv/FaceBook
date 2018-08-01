@@ -78,14 +78,22 @@ $(document).ready(function(){
 var modal=false;
 $('#new_post').click(function(){
 if(!modal){
+
 $('.close_modal').css('display','block') ;
 $(this).addClass('temp-modal');
 $(this).wrap('<div class="mod_bg"></div>');
+
+$('.all_post').css('margin-top','29vh') ;
 $('.mod_bg').fadeIn('slow') ;
-modal=true;}
+$('.content-submit').slideDown(400) ;
+modal=true;
+}
 }) ;
 $('.close_modal').click(function(){
+  $('.content-submit').css('display','none') ;
 $('#new_post').removeClass('temp-modal') ;
+$('.all_post').css('margin-top','12px') ;
+
 $('mod_bg').fadeOut('slow'); $('.close_modal').css('display','none')
 $('#new_post').unwrap() ; modal=false;})
 

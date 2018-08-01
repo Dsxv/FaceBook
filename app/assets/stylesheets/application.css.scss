@@ -20,6 +20,9 @@
 textarea:focus, input:focus{
     outline: none;
 }
+body{
+background-color: rgb(227, 227, 227);
+}
 #navbar {
   position: fixed;
   background-color: rgb(66, 104, 170);
@@ -51,7 +54,7 @@ textarea:focus, input:focus{
       border: 0;
       padding: 3px 2px 2px 5px;
       font-size: 0.85em;
-      font-family: Arial;
+      font-family: Helvetica;
       border-radius: 2px 0 0 2px;
     }
 @keyframes colchange {
@@ -103,7 +106,7 @@ textarea:focus, input:focus{
     border-right: 1px solid rgb(56, 90, 148);
     color: white;
     font-size: 0.85em;
-    font-family: Arial;
+    font-family: Helvetica;
     padding: 0.5vw 1.5vw;
     font-weight: bolder;
     transition: ease-in-out 100ms;
@@ -143,7 +146,7 @@ textarea:focus, input:focus{
 
 .newsfeed {
   background-color: rgb(227, 227, 227);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   padding-top: 8vh;
   display: flex;
@@ -153,7 +156,7 @@ textarea:focus, input:focus{
   }
 
   .newsfeed-main {
-    height: 100vh;
+    height: 100%;
     width: 40vw;
   }
 
@@ -164,7 +167,7 @@ textarea:focus, input:focus{
     left:0;
     height:100%;
     width:100%;
-    background-color: rgba(43, 43, 43, 0.54) ;
+    background-color: rgba(43, 43, 43, 0.65) ;
     z-index: 1;
     overflow: auto;
 
@@ -179,6 +182,7 @@ textarea:focus, input:focus{
       border-radius: 4px;
   }
   .new-post {
+    border:1px solid rgb(215, 215, 215) ;
     padding:0 10 10 10px;
     background-color: white;
     border-radius: 4px;
@@ -218,7 +222,7 @@ textarea:focus, input:focus{
      }
      span{
        color: rgb(88, 88, 88) ;
-       font-family: Arial;
+       font-family: Helvetica;
        font-size:.8em;
        padding-left: .5vw;
        padding-right:.5vw;
@@ -258,7 +262,7 @@ textarea:focus, input:focus{
       font-size: .95em ;
      }
      .content-submit{
-      // display:none;
+       display:none;
       width: 98% ;
     border: none;
     margin: .5vw;
@@ -266,7 +270,7 @@ textarea:focus, input:focus{
     color: white;
     background-color: rgb(66,104,170);
     border-radius: 4px;
-    font-family: Arial;
+    font-family: Helvetica;
     font-size: .95em;
     font-weight: bolder;
      }
@@ -285,5 +289,63 @@ textarea:focus, input:focus{
        }
      }
     }
+  }
+}
+.all_post{
+  width:100% ;
+  height:100vh;
+  margin-top:12px;
+
+  .post{ border:1px solid rgb(215, 215, 215) ;
+    border-radius: 5px;
+    margin-bottom:2vh;
+    background-color: white;
+
+    .post-user{height:8vh;
+      display: flex;
+      padding:12px;
+
+
+      .left{
+        width:5vw;
+       img{border-radius: 50% ;
+       }
+      }
+      .right{margin-left:-15px;
+            .name{font-family: Helvetica;font-size:.92em;cursor:pointer;font-weight: bolder;}
+            .time{font-size: .75em;color:rgb(140, 140, 140);margin-top: -2px;}
+      }
+     }
+
+    .post-body{ padding-top:12px;
+          .content{
+            padding:0px 0px 6px 14px;
+
+          }
+          .content-bigger{ border-top:1px solid rgb(215, 215, 215) ;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size:2em ;
+              font-weight: bolder;
+             padding:5px;
+             background: linear-gradient(to bottom, #b3dced 0%,#29b8e5 41%,#bce0ee 89%);
+
+              div{color: white ;
+                padding:10px;
+              }
+          }
+
+    }
+  .like{
+       height:3em;
+     .status{height:1em;}
+     .action_it{display:flex;justify-content: center;
+     div{width:30%;}
+      .like_it{font-size: 2em; color: black;}
+   }
+
+   }
+
   }
 }

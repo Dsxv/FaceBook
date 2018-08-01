@@ -1,24 +1,41 @@
 <% @posts.each do |post| %>
   <div class="post">
     <div class="post-user">
-
+  <!-- the header part of the post viz. user_name ,  pic , date added  and a drop down setting-->
+    <div class="left">
+      <%=image_tag(post.user.profile_pic , style:"height:40px;width:40px")%>
     </div>
-    <div class="body">
+    <div class="right">
+      <div class="name"><%= post.user.name %></div>
+      <div class="time"><%= time_ago_in_words(post.created_at) %></div>
+    </div></div>
+    <div class="post-body"> <!-- contains the post content and image if any? -->
       <%if post.image.attached? %>
       <div class="content"><%=post.content%></div>
-      <div class="img"><%=post.image%></div>
+      <div class="img"><%=image_tag(post.image , style:"width:100%;height:auto;")%></div>
       <%else%>
-      <div class="content-bigger"><%=post.content%></div>
+      <div class="content-bigger"><div><%=post.content%></div></div>
 
       <%end%>
 
     </div>
+
     <div class="like">
-      <!-- Like status -->
+    <% if post.likes.count||post.comments.count %>
+      <div class="status">
+        <span class="like_count"><%=post.likes.count%></span>
+        <span class="comment_count"><%=post.comments.count%></span>
+       </div>
+
+      <%end%>
+      <div class="action_it">
+        <div class="like_it"><i class="far fa-thumbs-up"></i></div>
+        <div class="comment_it"></div>
+        <div class="share_it"></div>
+      </div>
     </div>
     <div class="post-comment">
        <div class="new-comment">
-         
          </div>
        <div class="all-comment">
          <% post.comments.each do |comment| %>

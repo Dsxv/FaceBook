@@ -21,7 +21,7 @@
     </div>
 
     <div class="like">
-    <% if post.likes.count||post.comments.count %>
+    <% if post.likes.count!=0||post.comments.count!=0 %>
       <div class="status">
         <span class="like_count"><%=post.likes.count%></span>
         <span class="comment_count"><%=post.comments.count%></span>
@@ -29,9 +29,9 @@
 
       <%end%>
       <div class="action_it">
-        <div class="like_it"><i class="far fa-thumbs-up"></i></div>
-        <div class="comment_it"></div>
-        <div class="share_it"></div>
+        <div class="like_it"><i class="far fa-thumbs-up"></i><span>Like</span></div>
+        <div class="comment_it"><i class="far fa-comment-alt"></i><span>Comment</span></div>
+        <div class="share_it"><i class="fas fa-share"></i><span>Share</span></div>
       </div>
     </div>
     <div class="post-comment">

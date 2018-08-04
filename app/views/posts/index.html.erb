@@ -7,26 +7,27 @@
       <i class="fa fa-times close_modal"></i>
       <%=form_for(@post , html: {class: "form"} , url:posts_path) do |p| %>
       <div class="selector">
-         <i class="fa fa-pencil" id="post_icon"><span>Make Post</span></i>
+        <i class="fa fa-pencil" id="post_icon">
+          <span>Make Post</span></i>
         <%= p.file_field :image , id: "image_new" %>
-        <i class="fa fa-image" id="image_alt"><span>Photo</span></i>
+        <i class="fa fa-image" id="image_alt">
+          <span>Photo</span></i>
       </div>
       <div class="person">
-         <div class="pic"><%= image_tag(current_user.profile_pic , style: "height:45px ; width:45px")%></div>
+        <div class="pic"><%= image_tag(current_user.profile_pic , style: "height:45px ; width:45px")%></div>
 
         <%= p.text_field :content , placeholder:"Write something here..." , class: "content" , autocomplete: "off"%>
       </div>
-         <img src="" alt="" id="preview">
-         <i class="fa fa-times close"></i>
+      <img src="" alt="" id="preview">
+      <i class="fa fa-times close"></i>
 
       <%= p.submit "New Post" , class: "btn content-submit "%>
-
-
     <%end%>
 
   </div>
 
-    <div class="all_post"> <%= render 'posts' %></div>
+  <div class="all_post">
+    <%= render 'posts' %></div>
 </div>
 
 </div>

@@ -1,5 +1,5 @@
-<% @posts.each do |post| %>
-  <div class="post">
+
+  <div class="post p<%=post.id%>">
     <div class="post-user">
   <!-- the header part of the post viz. user_name ,  pic , date added  and a drop down setting-->
     <div class="left">
@@ -29,6 +29,11 @@
 
       <%end%>
       <div class="action_it">
+       <%= form_for( @like , remote: true) do |l|  %>
+        <input type="hidden" name="like[parent_type]" value="Post">
+        <input type="hidden" name="like[parent_id]" value="<%=post.id%>">
+       <%= l.submit "" ,  class:"like_click"  ,  style:"display:none;"%>
+       <%end%>
         <div class="like_it"><i class="far fa-thumbs-up"></i><span>Like</span></div>
         <div class="comment_it"><i class="far fa-comment-alt"></i><span>Comment</span></div>
         <div class="share_it"><i class="fas fa-share"></i><span>Share</span></div>
@@ -49,5 +54,3 @@
 
     </div>
   </div>
-
-  <%end %>

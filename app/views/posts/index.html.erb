@@ -27,7 +27,12 @@
   </div>
 
   <div class="all_post">
-    <%= render 'posts' %></div>
+    <% @posts.each do |p|%>
+    <%= render partial: 'post' , locals: {post: p} %>
+    <% end%>
+    <!--  first part in local is the key and second is value .
+     i,e post: is a var in partial p is value sent -->
+  </div>
 </div>
 
 </div>

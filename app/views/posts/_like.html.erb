@@ -1,0 +1,45 @@
+<div class="status">
+
+  <span class="like_count">
+    <% if Like.exists?(user_id:current_user.id , parent_id:post.id , parent_type:"Post")%>
+    <% c = post.likes.count %>
+   <% if c > 2 %>
+    You and <%=c-1%> others like this
+    <%end%>
+   <% if c==2 %>
+   You and 1 other liked this
+   <%end%>
+   <% if c==1 %>
+   You liked this
+   <%end%>
+   <%else%>
+   <% if post.likes.count>0 %>
+   <%= post.likes.count %>
+   <%end%>
+   <% end%>
+    </span>
+
+ </div>
+
+
+<div class="action_it">
+ <% if Like.exists?(user_id:current_user.id , parent_id:post.id , parent_type:"Post")%>
+  <%= link_to( "" , like_path(Like.find_by(user_id: current_user.id , parent_id: post.id ,
+     parent_type:"Post").id) , method: :delete , class: "like_click" , remote: true) %>
+ <% else %>
+ <%= form_for( @like , remote: true) do |l|  %>
+  <input type="hidden" name="like[parent_type]" value="Post">
+  <input type="hidden" name="like[parent_id]" value="<%=post.id%>">
+ <%= l.submit "" ,  class:"like_click"  ,  style:"display:none;"%>
+ <%end%>
+ <% end%>
+  <div class="like_it">
+   <% if Like.exists?(user_id:current_user.id,parent_id:post.id,parent_type:"Post") %>
+    <i class="fas fa-thumbs-up liked"></i><span class="liked">Like</span>
+  <% else %>
+    <i class="far fa-thumbs-up"></i><span>Like</span>
+    <%end%>
+  </div>
+  <div class="comment_it"><i class="far fa-comment-alt"></i><span>Comment</span></div>
+  <div class="share_it"><i class="fas fa-share"></i><span>Share</span></div>
+</div>

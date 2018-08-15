@@ -300,6 +300,7 @@ body {
     border-radius: 5px;
     margin-bottom: 2vh;
     background-color: white;
+    padding-bottom: 15px;
 
     .post-user {
       height: 8vh;
@@ -360,12 +361,18 @@ body {
       height: 3em;
 
       .status {
-        height: 1em;
+        height: 25px;
+        padding:8px;
+        padding-left: 25px;
+        font-size: .85em;
+        color:grey;
+        font-family: Helvetica;
       }
 
       .action_it {
         display: flex;
         justify-content: center;
+        height:1.05em;
 
         div {
           border-top: 1px solid rgb(215, 215, 215);
@@ -377,6 +384,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
+          cursor:pointer;
 
           span {
             padding-left: 5px;
@@ -385,6 +393,10 @@ body {
           }
         }
       }
+    }
+    .liked{
+     color:blue;
+    transform: 1.2;
     }
   }
 }

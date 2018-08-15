@@ -1,0 +1,7 @@
+$(function(){
+
+ $('#post<%=@like.parent_id=%> .like').html("<%=j render partial: 'posts/like' , locals: {post: @like.parent} %>") ;
+
+
+
+}) ;

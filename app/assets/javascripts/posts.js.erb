@@ -64,7 +64,7 @@ $(document).ready(function(){
      {$('.content-submit').prop('disabled', true);
       $('.content-submit').css({'cursor':'default'});
    }
- 
+
 
       })
 
@@ -72,7 +72,7 @@ $(document).ready(function(){
 var modal=false;
 $('#new_post').click(function(){
 if(!modal){
-
+$('#navbar').css('z-index','0') ;
 $('.close_modal').css('display','block') ;
 $(this).addClass('temp-modal');
 $(this).wrap('<div class="mod_bg"></div>');
@@ -84,6 +84,7 @@ modal=true;
 }
 }) ;
 $('.close_modal').click(function(){
+  $('#navbar').css('z-index','999') ;
   $('.content-submit').css('display','none') ;
 $('#new_post').removeClass('temp-modal') ;
 $('.all_post').css('margin-top','12px') ;

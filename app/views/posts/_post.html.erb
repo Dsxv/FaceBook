@@ -23,18 +23,8 @@
     <div class="like">
      <%= render partial: 'like' , locals: {post: post} %>
     </div>
-    <div class="post-comment">
-       <div class="new-comment">
-         </div>
-       <div class="all-comment">
-         <% post.comments.each do |comment| %>
-         <div class="comment">
-          <span class="comment-user"></span>
-          <span class="comment-content"></span>
-         </div>
-         <div class="comment-like"></div>
-         <% end %>
-       </div>
 
+    <div class="post-comment">
+       <%= render partial: 'comments/comments' , locals: {post: post} %>
     </div>
   </div>

@@ -1,0 +1,18 @@
+<div class="new-comment">
+   <div class="pic"><%= image_tag(current_user.profile_pic , style: "height:35px ; width:35px")%></div>
+   <%=form_for(@comment) do |c| %>
+     <input type="hidden" name="comment[parent_type]" value="Post">
+     <input type="hidden" name="comment[parent_id]" value="<%=post.id%>">
+     <%= c.text_field :content , placeholder: "Write a comment..." , autocomplete: "off" %>
+     <%=c.submit class:"comment_submit"%>
+    <%end%>
+
+  </div>
+
+<div class="all-comment">
+  <% post.comments.order(created_at: :desc).each do |comment| %>
+  <div id="comment_<%=comment.id%>">
+  <%= render partial: 'comments/comment' , locals: {comment:comment} %>
+</div>
+  <% end %>
+</div>

@@ -1,0 +1,41 @@
+
+  <div class="comment">
+  <span class="comment-user">
+    <div class="pic"><%= image_tag(comment.user.profile_pic , style: "height:35px ; width:35px")%></div>
+  </span>
+  <span class="comment-content">
+    <b><%= link_to comment.user.name , "#" %></b>
+    <span><%=comment.content%></span>
+
+
+  </span>
+  <%if comment.likes.exists? %>
+  <span class="comment_like_count ">
+     <i class="fas fa-thumbs-up style"></i>
+   <%= comment.likes.count %>
+   <%end%>
+
+  </span>
+
+  </div>
+
+<div class="cmlike">
+
+ <div class="comment-like" id="clike_<%=comment.id%>">
+   <%if Like.exists?(user_id: current_user.id , parent_type:"Comment" ,parent_id:comment.id) %>
+   <b><%=link_to "Like" ,
+   like_path(Like.find_by(user_id: current_user.id , parent_type:"Comment",parent_id:comment.id).id), method: :delete, remote: true%> </b>
+   <!-- clicking link_to will destroy the created like -->
+   <% else %>
+    <%= form_for(@c_like , html: {style:"display:none;"}, remote: true) do |l| %>
+      <input type="hidden" name="like[parent_type]" value="Comment">
+      <input type="hidden" name="like[parent_id]" value="<%=comment.id%>">
+      <%= l.submit %>
+
+    <%end%>
+    <span class="lclick">Like</span>
+   <%end%>
+ </div>
+
+
+</div>

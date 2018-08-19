@@ -2,8 +2,10 @@ class PostsController < ApplicationController
  before_action :authenticate_user!
   def index
     @posts = Post.all.order(created_at: :desc)
-    @like = Like.new ;
+    @like = Like.new
     @post = Post.new
+    @comment = Comment.new
+    @c_like = Like.new
   end
   def create
     @post = Post.create(post_params)

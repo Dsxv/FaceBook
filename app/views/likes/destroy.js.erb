@@ -1,6 +1,10 @@
 $(function(){
+ <% if @like.parent_type== "Post" %>
+ $('#post<%=@like.parent_id=%> .like').html("<%=j render partial: 'posts/like' , locals: {post: @like.parent} %>") ;
+ <% else %>
+  $('#comment_<%=@like.parent_id%>').html("<%= j render partial: 'comments/comment', locals: {comment:@like.parent } %>") ;
 
-  $('#post<%=@like.parent_id=%> .like').html("<%=j render partial: 'posts/like' , locals:{ post: @like.parent} %>") ;
+ <% end %>
 
 
 

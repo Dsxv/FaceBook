@@ -16,7 +16,7 @@ class LikesController < ApplicationController
   def destroy
     @like = Like.find(params[:id])
 
-
+   @c_like=Like.new
     respond_to do |format|
       format.js
        format.html { redirect_to root_path }

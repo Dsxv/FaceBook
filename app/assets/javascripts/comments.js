@@ -9,9 +9,6 @@ $(function(){
        else
        { $(this).next().prop('disabled',false) ; console.log('enabled') ;}
 
-  })
+  }) ;
 
-  $('.post').on('click' , '.lclick',function(){
-    $(this).prev().find('input[type="submit"]').click() ;
-  })
 })

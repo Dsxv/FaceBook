@@ -27,12 +27,13 @@
    like_path(Like.find_by(user_id: current_user.id , parent_type:"Comment",parent_id:comment.id).id), method: :delete, remote: true%> </b>
    <!-- clicking link_to will destroy the created like -->
    <% else %>
+
     <%= form_for(@c_like , html: {style:"display:none;"}, remote: true) do |l| %>
       <input type="hidden" name="like[parent_type]" value="Comment">
       <input type="hidden" name="like[parent_id]" value="<%=comment.id%>">
       <%= l.submit %>
-
     <%end%>
+
     <span class="lclick">Like</span>
    <%end%>
  </div>

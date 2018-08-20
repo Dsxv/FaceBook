@@ -18,7 +18,7 @@ class LikesController < ApplicationController
 
    @c_like=Like.new
     respond_to do |format|
-      format.js
+      format.js { }
        format.html { redirect_to root_path }
     end
     @like.delete

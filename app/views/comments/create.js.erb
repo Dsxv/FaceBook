@@ -1,3 +1,5 @@
 $(function(){
-  
+  $('#post<%=@comment.parent_id%> .all-comment').prepend('<div id="comment_<%=@comment.id%>"> <%=j render partial: "comments/comment" , locals: {comment:@comment} %></div>');
+  $('#post<%=@comment.parent_id%> #comment_content').val('') ;
+
 })

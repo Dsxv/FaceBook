@@ -70,7 +70,8 @@ $(document).ready(function(){
 
 
 var modal=false;
-$('#new_post').click(function(){
+$('#new_post').on('click' , function(){
+  console.log('dd') ;
 if(!modal){
 $('#navbar').css('z-index','0') ;
 $('.close_modal').css('display','block') ;

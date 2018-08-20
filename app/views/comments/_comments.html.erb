@@ -1,6 +1,6 @@
 <div class="new-comment">
    <div class="pic"><%= image_tag(current_user.profile_pic , style: "height:35px ; width:35px")%></div>
-   <%=form_for(@comment) do |c| %>
+   <%=form_for(@comment , remote: true) do |c| %>
      <input type="hidden" name="comment[parent_type]" value="Post">
      <input type="hidden" name="comment[parent_id]" value="<%=post.id%>">
      <%= c.text_field :content , placeholder: "Write a comment..." , autocomplete: "off" %>

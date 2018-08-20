@@ -10,4 +10,13 @@ $('.post').on('click','.like_it',function(){
  x.click() ;
 })
 
+
+
+
+  $('.post').on('click' , '.lclick',function(){
+
+    console.log('clicked1') ;
+    $(this).prev().find('input[type="submit"]').click() ;
+
+  }) ;
 }) ;

@@ -2,12 +2,13 @@
 #   gem install postgres
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'postgres'
+#   gem 'ps'
 #
 default: &default
-  adapter: postgres
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+
 
 # development:
 #   <<: *default
@@ -29,6 +30,10 @@ development:
   database: my_database_development
   pool: 5
   timeout: 5000
+  username: dstar
+  password: practicalchemistry
+  host: localhost
+
 test:
   adapter: postgresql
   database: my_database_test
